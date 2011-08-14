@@ -1,0 +1,18 @@
+<div id='logo'>
+  <div class="logoMain">ROB DUSKEY</div>
+  <div class="logoMinor">~ AND ~</div>
+  <div class="logoMain">THE ROUNDERS</div>
+</div>
+
+<%=
+  ::Fiber.new {
+    ::Fiber.yield(
+      render(:partial => "/shared/menu", :locals => {
+               :dom_id => 'menu',
+               :css => 'menu',
+               :roots => @menu_pages.where(:parent_id => nil),
+               :collection => @menu_pages.where(@menu_pages.arel_table[:parent_id].not_eq(nil)),
+               :selected_item => (@page if defined?(::Page))
+             })
+    )
+  }.resume %>

@@ -1,0 +1,24 @@
+<%= form_for [:admin, @link] do |f| -%>
+  <%= render :partial => "/shared/admin/error_messages", :locals => {
+          :object => @link,
+          :include_object_name => true
+        } %>
+  
+  <div class='field'>
+    <%= f.label :Title -%>
+    <%= f.text_field :Title, :class => 'larger widest' -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :Url -%>
+    <%= f.text_field :Url -%>
+  </div>
+  
+  <%= render :partial => "/shared/admin/form_actions",
+              :locals => {
+                :f => f,
+                :continue_editing => false,
+                :delete_title => t('delete', :scope => 'admin.links.link'),
+                :delete_confirmation => t('message', :scope => 'shared.admin.delete', :title => @link.Title)
+              } %>
+<% end -%>

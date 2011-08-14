@@ -1,0 +1,26 @@
+
+<script type="text/javascript ">
+   $(document).ready(
+        function(){
+             FadeInContentAreas();
+             $('.bgt3').stop().animate({ marginLeft: "25px", opacity: ".4" }, 200);
+        }
+    );
+</script>
+    <div id="ImageContainer">
+        <div id="bgt1" class="bgt1 imageSelector frontImage"></div>
+        <div id="bgt2" class="bgt2 imageSelector frontImage" ></div>
+        <div id="bgt3" class="bgt3 imageSelector currentlySelected selectedFrontImage" ></div>
+        <div id="bgt4" class="bgt4 imageSelector frontImage" ></div>
+        <div id="bgt5" class="bgt5 imageSelector frontImage" ></div>
+    </div>
+
+
+<section id='Latest_News' class='modal'>
+    <%= render :partial => "/blog/shared/latestPost" %>
+</section>
+<Section id='Next_Show' class='modal'>
+    <%= render :partial => "/shows/nextShow" %>
+</Section>
+
+

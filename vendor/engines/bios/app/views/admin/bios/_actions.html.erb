@@ -1,0 +1,28 @@
+<ul>
+  <% if Admin::BiosController.searchable? %>
+    <li>
+      <%= render :partial => "/shared/admin/search",
+                  :locals => {
+                    :url => admin_bios_url
+                  } %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), new_admin_bio_url,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? and Admin::BiosController.sortable? and Bio.count > 1 %>
+  <li>
+    <%= link_to t('.reorder', :what => "Bios"),
+                 admin_bios_url,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Bios"),
+                 admin_bios_url,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

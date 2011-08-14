@@ -1,0 +1,15 @@
+<div class="modal" id="news">
+    <section>
+        <article>
+            <ul>
+                <% @links.each do |link| %>
+                    <li>
+                        <a href="<%= link.Url%>" target="_blank"><%= link.Title%></a>
+                    </li>
+                 <% end %>
+            </ul>
+
+        </article>
+    </section>
+</div>
+

@@ -1,0 +1,37 @@
+<script type="text/javascript ">
+   $(document).ready(
+        function(){
+            ShowContentAreas();
+        }
+    );
+</script>
+
+
+            <div id="body_content" class="modal">
+                <div class="scrollbar">
+                  <div class="track">
+                    <div class="thumb">
+                      <div class="end">
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="viewport">
+                    <div class="overview">
+                      <article>
+                         <dd class="title"><%= @portfolio_entry.title %></dd>
+                         <ul id='portfolio_images'>
+                            <% @portfolio_entry.images.each_with_index do |image, index| %>
+                                <li class="<%= cycle('odd', 'even') %> <%= (index == params[:image_id].to_i) ? 'selected' : 'other' %>">
+                                    <%= link_to_portfolio_image(@master_entry, @portfolio_entry, image, index) %>
+                                </li>
+                            <% end %>
+                         </ul>
+
+                      </article>
+                    </div>
+                </div>
+            </div>
+

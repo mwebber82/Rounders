@@ -1,0 +1,25 @@
+lolcat:
+  shared:
+    admin:
+      image_picker:
+        image: IMAGE
+  plugins:
+    shows:
+      title: Shows
+  admin:
+    shows:
+      actions:
+        create_new: CREATE NEW Show
+        reorder: REORDR Shows
+        reorder_done: DUN REORDERIN Shows
+      records:
+        title: Shows
+        sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
+        no_items_yet: THAR R NO Shows YET. CLICK "CREATE NEW Show" 2 ADD UR FURST show.
+      show:
+        view_live_html: VIEW DIS show LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
+        edit: EDIT DIS show
+        delete: REMOOV DIS show FOREVR
+  shows:
+    show:
+      other: OTHR Shows

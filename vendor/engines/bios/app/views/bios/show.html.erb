@@ -1,0 +1,57 @@
+<% content_for :body_content_title do %>
+  <%= @bio.Name %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  <section>
+    <h1>Name</h1>
+    <p>
+      <%=raw @bio.Name %>
+    </p>
+  </section>
+  <section>
+    <h1>Instruments</h1>
+    <p>
+      <%=raw @bio.Instruments %>
+    </p>
+  </section>
+  <section>
+    <h1>Details</h1>
+    <p>
+      <%=raw @bio.Details %>
+    </p>
+  </section>
+  <section>
+    <h1>Image</h1>
+    <p>
+      <%= image_fu @bio.Image, nil %>
+    </p>
+  </section>
+  <section>
+    <h1>Facebook</h1>
+    <p>
+      <%=raw @bio.Facebook %>
+    </p>
+  </section>
+  <section>
+    <h1>Email</h1>
+    <p>
+      <%=raw @bio.Email %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :body_content_right do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="bios">
+      <% @bios.each do |bio| %>
+        <li>
+          <%= link_to bio.Name, bio_url(bio) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

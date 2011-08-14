@@ -1,0 +1,21 @@
+nl:
+  plugins:
+    shows:
+      title: Shows
+  admin:
+    shows:
+      actions:
+        create_new: Maak een nieuwe Show
+        reorder: Wijzig de volgorde van de Shows
+        reorder_done: Klaar met het wijzingen van de volgorde van de Shows
+      records:
+        title: Shows
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+        no_items_yet: Er zijn nog geen Shows. Druk op 'Maak een nieuwe Show' om de eerste aan te maken.
+      show:
+        view_live_html: Bekijk deze show op de website <br/><em>(opent een nieuw venster)</em>
+        edit: Bewerk deze show
+        delete: Verwijder deze show voor eeuwig
+  shows:
+    show:
+      other: Andere Shows

@@ -1,0 +1,61 @@
+<script type="text/javascript ">
+   $(document).ready(
+        function(){
+            ShowContentAreas();
+        }
+    );
+</script>
+
+
+            <div id="body_content" class="modal">
+                <div class="scrollbar">
+                  <div class="track">
+                    <div class="thumb">
+                      <div class="end">
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="viewport">
+                    <div class="overview">
+                        <article>
+                            <div class='inquiries'>
+                                <dl>
+                                  <dd class="title">Contact Us</dd>
+                                  <dd class="meta"><%=raw @page[Page.default_parts.first.to_sym] %></dd>
+                                  <dd class="summary">
+                                    <%= form_for @inquiry do |f| %>
+                                      <%= render :partial => "/shared/admin/error_messages",
+                                                 :locals => {
+                                                   :object => @inquiry,
+                                                   :include_object_name => true
+                                                 } %>
+                                      <div class='field'>
+                                        <%= f.required_label :name %>
+                                        <%= f.text_field :name %>
+                                      </div>
+                                      <div class='field'>
+                                        <%= f.required_label :email %>
+                                        <%= f.text_field :email %>
+                                      </div>
+                                      <div class='field message_field'>
+                                        <%= f.required_label :message  %>
+                                        <%= f.text_area :message, :rows => 8 %>
+                                      </div>
+                                      <div class='actions'>
+                                        <%= f.submit t('.send') %>
+                                      </div>
+                                    <% end %>
+                                  </dd>
+                                </dl>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+
+
+

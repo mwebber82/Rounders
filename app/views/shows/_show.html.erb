@@ -1,0 +1,38 @@
+<script type="text/javascript ">
+   $(document).ready(
+        function(){
+            ShowContentAreas();
+        }
+    );
+</script>
+
+
+            <div id="body_content" class="modal">
+                <div class="scrollbar">
+                  <div class="track">
+                    <div class="thumb">
+                      <div class="end">
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="viewport">
+                    <div class="overview">
+      <article id="<%= dom_id(show) %>">
+          <dl>
+            <dd class="title"><%= show.Title %></dd>
+            <dd class="meta"> <%= @shows.first.Date.time.strftime("%-m/%-d/%Y at %-I:%M %p")%></dd>
+            <dd class="summary">
+                <%= raw show.Details%>
+            </dd>
+          </dl>
+        </article>
+
+
+                    </div>
+                </div>
+            </div>
+
+

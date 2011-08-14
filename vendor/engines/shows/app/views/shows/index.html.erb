@@ -1,0 +1,38 @@
+
+        <section id='body_content' class='modal'>
+            <article>
+                <table>
+                        <thead>
+
+                        </thead>
+                        <tbody>
+                            <% count = 0 %>
+                            <% @shows.each do |show| %>
+                                <tr>
+                                    <td><%= image_fu show.Thumbnail, nil %></td>
+                                    <td><%= show.Date.time.strftime("%-m/%-d/%Y")  %></td>
+                                    <td>
+                                        <a onclick="javascript: ShowLocation('<%= 'location' + count.to_s()  %>')"><%= show.Location  %></a>
+                                        <p class="showLocation" id="<%= 'location' + count.to_s()  %>">
+                                            <%=show.Street %><br>
+                                            <%=show.City %>, <%=show.Province %> <%=show.Zip %><br>
+                                            <%=show.Country %><br>
+                                            <%=show.Phone %><br>
+                                            <a href="<%=show.Website %>" target="_blank"> <%=show.Website %></a>
+
+                                        </p>
+                                    </td>
+                                    <td><%= raw show.OtherBands %></td>
+                                    <td><%= show.Date.time.strftime("%-I:%M %p") %></td>
+                                    <td><%= number_to_currency(show.Admission) %></td>
+
+
+
+                                </tr>
+                        <% count = count + 1 %>
+                            <% end %>
+                        </tbody>
+                </table>
+            </article>
+        </section>
+

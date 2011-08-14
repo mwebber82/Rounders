@@ -1,0 +1,21 @@
+nl:
+  plugins:
+    bios:
+      title: Bios
+  admin:
+    bios:
+      actions:
+        create_new: Maak een nieuwe Bio
+        reorder: Wijzig de volgorde van de Bios
+        reorder_done: Klaar met het wijzingen van de volgorde van de Bios
+      records:
+        title: Bios
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+        no_items_yet: Er zijn nog geen Bios. Druk op 'Maak een nieuwe Bio' om de eerste aan te maken.
+      bio:
+        view_live_html: Bekijk deze bio op de website <br/><em>(opent een nieuw venster)</em>
+        edit: Bewerk deze bio
+        delete: Verwijder deze bio voor eeuwig
+  bios:
+    show:
+      other: Andere Bios

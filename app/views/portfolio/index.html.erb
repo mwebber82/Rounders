@@ -1,0 +1,57 @@
+<script type="text/javascript ">
+   $(document).ready(
+        function(){
+            ShowContentAreas();
+        }
+    );
+</script>
+
+
+            <div id="body_content" class="modal">
+                <div class="scrollbar">
+                  <div class="track">
+                    <div class="thumb">
+                      <div class="end">
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="viewport">
+                    <div class="overview">
+                      <article>
+                        <table>
+                            <% @portfolio_entries.each do | portfolio | -%>
+                                <tr>
+
+                                    <td style="width: 300px;">
+                                       <dl>
+                                         <dd class="title"><%= link_to portfolio.title, portfolio_url(portfolio) %></dd>
+                                         <dd class="meta"><%= raw portfolio.content%></dd>
+                                       </dl>
+                                    </td>
+                                   <td style="width: 200px;">
+                                      <dl>
+                                        <dd class="image">
+                                            <%= render :partial => "main_image" %>
+                                        </dd>
+                                      </dl>
+                                    </td>
+                                </tr>
+                                <span>
+
+
+                                  </span>
+                              <% end -%>
+                        </table>
+
+                      </article>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+

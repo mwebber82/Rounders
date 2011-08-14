@@ -1,0 +1,13 @@
+<p id="footerMessage">
+  <%= t('.copyright', :year => Time.now.year,
+                      :site_name => RefinerySetting.find_or_set(:site_name, "Company Name")) %>
+</p>
+  <div id="SocialNetworking">
+   <dd class="socialMedia">
+     <a class="facebook" href="<%= RefinerySetting['Rounders Facebook'] %>" target="_blank"></a>
+     <a class="myspace" href="<%= RefinerySetting['Rounders Myspace'] %>" target="_blank"></a>
+     <a class="youtube" href="<%= RefinerySetting['Rounders YouTube'] %>" target="_blank"></a>
+     <%= link_to t('.subscribe'), blog_rss_feed_url, :id => "rssLink", :class => "rss", :target => "_blank" %>
+   </dd>
+</div>
+

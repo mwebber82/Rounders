@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<%= javascript_include_tag "jquery-1.6.1.min", "application" %>
+<%= javascript_include_tag "jqem", "application" %>
+<%= javascript_include_tag "mousewheel", "application" %>
+<%= javascript_include_tag "tinyscrollbar", "application" %>
+<%= javascript_include_tag "jcorners", "application" %>
+
+<%= render :partial => "/shared/html_tag" %>
+  <% site_bar = render(:partial => "/shared/site_bar", :locals => {:head => true}) -%>
+  <%= render :partial => "/shared/head" %>
+  <body>
+    <%= site_bar -%>
+    <%= render :partial => "/shared/ie6check" if request.env['HTTP_USER_AGENT'] =~ /MSIE/ -%>
+    <div id="page_container" class="bg3">
+      <header>
+        <%= render :partial => "/shared/header" -%>
+      </header>
+      <section id='page'>
+          <%= yield %>
+      </section>
+      <footer>
+        <%= render :partial => "/shared/footer" -%>
+      </footer>
+    </div>
+    <%= render :partial => "/shared/javascripts" %>
+  </body>
+</html>

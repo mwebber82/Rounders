@@ -1,0 +1,21 @@
+<% if @blog_posts.many? %>
+
+  <ul id="blog_posts">
+  <% if @blog_posts.any? %>
+      <% @blogCount = 0 %>
+      <% @blog_posts[0..2].each do |blog_post| %>
+
+        <li style="display: none;" id="<%="blog" +  @blogCount.to_s%>">
+          <dd class="title"><%= link_to blog_post.title, blog_post_url(blog_post) %></dd>
+          <dd class="meta"><%= "Posted by #{blog_post.author.username}" if blog_post.author.present? %> on <%=l blog_post.published_at.to_date, :format => :long %></dd>
+        </li>
+
+        <% @blogCount = @blogCount + 1 %>
+
+      <% end %>
+
+  <% else %>
+    <p><%= t('.no_blog_articles_yet') %></p>
+  <% end %>
+  </ul>
+<% end %>

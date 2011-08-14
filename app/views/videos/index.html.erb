@@ -1,0 +1,37 @@
+<script type="text/javascript ">
+   $(document).ready(
+        function(){
+            ShowContentAreas();
+        }
+    );
+</script>
+
+
+            <div id="body_content" class="modal">
+                <div class="scrollbar">
+                  <div class="track">
+                    <div class="thumb">
+                      <div class="end">
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="viewport">
+                    <div class="overview">
+                        <article>
+                   <% @videos.each do |video| %>
+                        <dl class="video">
+                            <dd class="meta"><%= raw video.Video %></dd>
+                            <dd class="videoTitle"><%=video.Title %></dd>
+                            <dd class="videoSummary"><%= raw video.Description %></dd>
+                        </dl>
+                    <% end %>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+
+

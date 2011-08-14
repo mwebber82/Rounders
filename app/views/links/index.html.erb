@@ -1,0 +1,42 @@
+<script type="text/javascript ">
+   $(document).ready(
+        function(){
+            ShowContentAreas();
+        }
+    );
+</script>
+
+<div id="body_content" class="modal">
+    <div class="scrollbar">
+      <div class="track">
+        <div class="thumb">
+          <div class="end">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="viewport">
+        <div class="overview">
+
+        <article>
+            <ul>
+                <% @links.each do |link| %>
+                    <li>
+                        <a href="<%= link.Url%>" class="link" target="_blank"><%= link.Title%></a>
+                    </li>
+                 <% end %>
+            </ul>
+
+        </article>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

@@ -1,0 +1,21 @@
+<div class="modal" id="news">
+    <section>
+        <article>
+    <% @bios.each do |bio| %>
+        <dl>
+            <dd class="image"><%= image_fu bio.Image, nil %></dd>
+            <dd class="title"><%=bio.Name %></dd>
+            <dt class="meta">Instruments</dt>
+            <dd class="meta"><%=bio.Instruments %></dd>
+            <dt class="meta">Contact</dt>
+            <p class="socialMedia">
+                <a class="facebook" href="<%= bio.Facebook %>" target="_blank"></a>
+                <a class="email" href="mailto: <%=bio.Email %>"></a>
+            </p>
+            <dd class="summary"><%= raw bio.Details %></dd>
+        </dl>
+    <% end %>
+        </article>
+    </section>
+</div>
+

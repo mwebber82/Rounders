@@ -1,0 +1,13 @@
+    <div class="modal" id="news">
+
+            <article>
+       <% @videos.each do |video| %>
+            <dl class="video">
+                <dd class="meta"><%= raw video.Video %></dd>
+                <dd class="videoTitle"><%=video.Title %></dd>
+                <dd class="videoSummary"><%= raw video.Description %></dd>
+            </dl>
+        <% end %>
+            </article>
+
+    </div>

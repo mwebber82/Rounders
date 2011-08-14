@@ -1,0 +1,12 @@
+
+    <% if post.live? %>
+      <article id="<%= dom_id(post) %>">
+          <dl>
+            <dd class="title"><%= post.title %></dd>
+            <dd class="meta"><%= "Posted by #{post.author.username}" if post.author.present? %> on <%=l post.published_at.to_date, :format => :long %></dd>
+            <dd class="summary">
+                <%= raw post.body%>
+            </dd>
+          </dl>
+        </article>
+<% end %>

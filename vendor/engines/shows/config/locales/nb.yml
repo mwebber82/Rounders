@@ -1,0 +1,21 @@
+nb:
+  plugins:
+    shows:
+      title: Shows
+  admin:
+    shows:
+      actions:
+        create_new: Lag en ny Show
+        reorder: Endre rekkefølgen på Shows
+        reorder_done: Ferdig å endre rekkefølgen Shows
+      records:
+        title: Shows
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen Shows enda. Klikk på "Lag en ny Show" for å legge til din første show.
+      show:
+        view_live_html: Vis hvordan denne show ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne show
+        delete: Fjern denne show permanent
+  shows:
+    show:
+      other: Andre Shows

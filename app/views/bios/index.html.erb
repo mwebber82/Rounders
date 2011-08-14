@@ -1,0 +1,61 @@
+<script type="text/javascript ">
+   $(document).ready(
+        function(){
+            ShowContentAreas();
+        }
+    );
+</script>
+
+            <div id="body_content" class="modal">
+                <div class="scrollbar">
+                  <div class="track">
+                    <div class="thumb">
+                      <div class="end">
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="viewport">
+                    <div class="overview">
+                        <article>
+                          <table>
+                            <% @bios.each do |bio| %>
+                                <tr style="vertical-align: top;">
+                                    <td class="imageContainer">
+                                      <dl>
+                                        <dd class="image"><%= image_fu bio.Image, nil %></dd>
+                                      </dl>
+                                    </td>
+                                    <td class="detailsContainer">
+                                       <dl>
+                                            <dd class="title"><%=bio.Name %></dd>
+                                            <dt class="meta">Instruments</dt>
+                                            <dd class="meta"><%=bio.Instruments %></dd>
+                                            <dt class="meta">Contact</dt>
+                                            <dd class="socialMedia">
+                                                <% if not bio.Facebook.nil? || bio.Facebook.empty?%>
+                                                    <a class="facebook" href="<%= bio.Facebook %>" target="_blank"></a>
+                                                <% end %>
+                                                <% if not bio.Email.nil? || bio.Email.empty?%>
+                                                    <a class="email" href="mailto: <%=bio.Email %>"></a>
+                                                <% end %>
+                                            </dd>
+                                            <dd class="summary"><%= raw bio.Details %></dd>
+                                       </dl>
+
+                                    </td>
+                                </tr>
+
+                            <% end %>
+                         </table>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+

@@ -1,0 +1,84 @@
+<script type="text/javascript ">
+   $(document).ready(
+        function(){
+            ShowContentAreas();
+        }
+    );
+</script>
+
+
+            <div id="body_content" class="modal">
+                <div class="scrollbar">
+                  <div class="track">
+                    <div class="thumb">
+                      <div class="end">
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="viewport">
+                    <div class="overview">
+      <article id="<%= dom_id(@show) %>">
+          <dl>
+            <dd class="title"><%= @show.Title %></dd>
+          </dl>
+          <table>
+            <tr style="vertical-align: top;">
+              <td style="width: 300px;">
+                <dl>
+                    <dd style="font-size: .8em; text-transform: uppercase; padding-bottom: 10px;">When</dd>
+                    <dd class="meta"> <%= @show.Date.time.strftime("%-m/%-d/%Y at %-I:%M %p")%></dd>
+                    <dd style="font-size: .8em; text-transform: uppercase; padding-bottom: 10px; padding-top: 10px;">Admission Cost</dd>
+                    <dd class="meta"><%= number_to_currency(@show.Admission) %></dd>
+                </dl>
+              </td>
+              <td>
+                 <dl>
+                  <dd style="font-size: .8em; text-transform: uppercase; padding-bottom: 10px;">Other Bands Playing</dd>
+                  <dd class="meta"><%= raw @show.OtherBands%></dd>
+               </dl>
+              </td>
+            </tr>
+            <tr style="vertical-align: top;">
+              <td style="width: 300px;">
+                <dl>
+                  <dd style="font-size: .8em; text-transform: uppercase; padding-bottom: 10px;">Information</dd>
+                  <dd class="meta" style="width: 300px;"><%= raw @show.Details%></dd>
+                  <dd class="image">
+                    <%= image_fu @show.Thumbnail, nil %>
+                  </dd>
+
+                </dl>
+              </td>
+              <td>
+
+                <dl>
+                  <dd style="font-size: .8em; text-transform: uppercase; padding-bottom: 10px;">Location Details</dd>
+                  <% if not @show.Website.nil? || @show.Website.empty?%>
+                     <dd class="meta"> <a href="<%=@show.Website %>" target="_blank"> <%=@show.Location%></a></dd><br>
+                  <% else %>
+                      <dd class="meta"><%=@show.Location%></dd><br>
+                  <% end %>
+
+                  <dd class="meta"><%= @show.Street %></dd>
+                  <dd class="meta"><%= @show.City %>, <%= @show.Province %> <%= @show.Zip %></dd>
+                  <dd class="meta"><%= @show.Country %></dd>
+                  <dd class="meta"><%= @show.Phone %></dd>
+
+                </dl>
+              </td>
+            </tr>
+
+          </table>
+
+
+
+        </article>
+
+
+                    </div>
+                </div>
+            </div>
+

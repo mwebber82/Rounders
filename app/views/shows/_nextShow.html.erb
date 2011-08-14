@@ -1,0 +1,31 @@
+
+<% if @shows.any? %>
+    <article id="<%= dom_id(@shows.first) %>">
+        <dl>
+            <dd class="title">
+                   Next Show
+            </dd>
+            <dd class="meta">
+              <% if @shows.first != nil %>
+                <%= link_to @shows.first.Location, show_url(@shows.first) %> - <%= @shows.first.Date.time.strftime("%-m/%-d/%Y at %-I:%M %p")%>
+              <% end%>
+            </dd>
+
+        </dl>
+    </article>
+
+<% else%>
+    <article>
+    <dl>
+        <dd class="title">
+               Next Show
+        </dd>
+        <dd class="meta">
+            There is no next show
+        </dd>
+
+    </dl>
+</article>
+
+<% end %>
+

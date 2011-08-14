@@ -1,0 +1,21 @@
+nb:
+  plugins:
+    bios:
+      title: Bios
+  admin:
+    bios:
+      actions:
+        create_new: Lag en ny Bio
+        reorder: Endre rekkefølgen på Bios
+        reorder_done: Ferdig å endre rekkefølgen Bios
+      records:
+        title: Bios
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen Bios enda. Klikk på "Lag en ny Bio" for å legge til din første bio.
+      bio:
+        view_live_html: Vis hvordan denne bio ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne bio
+        delete: Fjern denne bio permanent
+  bios:
+    show:
+      other: Andre Bios

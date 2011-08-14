@@ -1,0 +1,127 @@
+<%= form_for [:admin, @show] do |f| -%>
+  <%= render :partial => "/shared/admin/error_messages", :locals => {
+          :object => @show,
+          :include_object_name => true
+        } %>
+  
+  <div class='field'>
+    <%= f.label :Title -%>
+    <%= f.text_field :Title, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :Date -%>
+    <%= f.datetime_select :Date -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :Details -%>
+    <%= f.text_area :Details, :rows => 10, :class => 'wymeditor widest' -%>
+  </div>
+
+  <div class='field'>
+    <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
+      <ul id='page_parts'>
+        <% [:OtherBands].each_with_index do |part, part_index| %>
+          <li class='ui-state-default<%= ' ui-state-active' if part_index == 0 %>'>
+            <%= link_to part.to_s.titleize, "##{part}" %>
+          </li>
+        <% end %>
+      </ul>
+
+      <div id='page_part_editors'>
+        <% [:OtherBands].each do |part| %>
+          <div class='page_part' id='<%= part %>'>
+            <%= f.text_area part, :rows => 10, :class => 'wymeditor widest' -%>
+          </div>
+
+        <% end %>
+
+      </div>
+
+    </div>
+  
+  <div class='field'>
+    <%= f.label :Thumbnail -%>
+    <%= render :partial => "/shared/admin/image_picker", :locals => {
+          :f => f,
+          :field => :Thumbnail_id,
+          :image => @show.Thumbnail,
+          :toggle_image_display => false
+        } %>
+  </div>
+  
+
+  <h2>Location Information</h2>
+  <table>
+    <tr style="vertical-align: top;">
+      <td style="padding-right: 100px;">
+           <div class='field'>
+                <%= f.label :Name -%>
+                <%= f.text_field :Location -%>
+           </div>
+          <div class='field'>
+                <%= f.label :Phone -%>
+                <%= f.text_field :Phone -%>
+          </div>
+
+          <div class='field'>
+                <%= f.label :Website -%>
+                <%= f.text_field :Website -%>
+          </div>
+
+          <div class='field'>
+                <%= f.label :Admission -%>
+                <%= f.text_field :Admission -%>
+          </div>
+      </td>
+      <td>
+            <div class='field'>
+                <%= f.label :Street -%>
+                <%= f.text_field :Street -%>
+            </div>
+
+            <div class='field'>
+                <%= f.label :City -%>
+                <%= f.text_field :City -%>
+            </div>
+
+            <div class='field'>
+                <%= f.label :Province -%>
+                <%= f.text_field :Province -%>
+            </div>
+
+            <div class='field'>
+                <%= f.label :Zip -%>
+                <%= f.text_field :Zip -%>
+            </div>
+
+            <div class='field'>
+                <%= f.label :Country -%>
+                <%= f.text_field :Country -%>
+            </div>
+
+      </td>
+    </tr>
+  </table>
+
+
+  
+
+
+  
+  <%= render :partial => "/shared/admin/form_actions",
+              :locals => {
+                :f => f,
+                :continue_editing => false,
+                :delete_title => t('delete', :scope => 'admin.shows.show'),
+                :delete_confirmation => t('message', :scope => 'shared.admin.delete', :title => @show.Title)
+              } %>
+<% end -%>
+<% content_for :javascripts do %>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end %>

@@ -1,0 +1,34 @@
+<script type="text/javascript ">
+   $(document).ready(
+        function(){
+            ShowContentAreas();
+        }
+    );
+</script>
+
+            <div id="body_content" class="modal">
+                <div class="scrollbar">
+                  <div class="track">
+                    <div class="thumb">
+                      <div class="end">
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="viewport">
+                    <div class="overview">
+                      <% if @blog_posts.any? %>
+                          <%= render :partial => "/blog/shared/post", :collection => @blog_posts %>
+                          <%= will_paginate @blog_posts %>
+                      <% end %>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
